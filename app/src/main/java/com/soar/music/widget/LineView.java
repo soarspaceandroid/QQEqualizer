@@ -52,7 +52,7 @@ public class LineView extends View {
     private void init(){
         paint.setColor(Color.RED);
         paint.setAntiAlias(true);
-        paint.setStrokeWidth(6);
+        paint.setStrokeWidth(4);
         paint.setStyle(Paint.Style.STROKE);
         screenWidErevy = getResources().getDisplayMetrics().widthPixels/keys.length;
         for(int x = 1 ; x  <= keys.length ; x ++){

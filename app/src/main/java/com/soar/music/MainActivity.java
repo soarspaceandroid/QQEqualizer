@@ -242,21 +242,24 @@ public class MainActivity extends AppCompatActivity {
                         value = EqualizerStyleValues.getDanceStyleValue();
                         break;
                     case 4:
-                        value = EqualizerStyleValues.getBlueStyleValue();
+                        value = EqualizerStyleValues.getLayerStyleValue();
                         break;
                     case 5:
-                        value = EqualizerStyleValues.getSirStyleValue();
+                        value = EqualizerStyleValues.getBlueStyleValue();
                         break;
                     case 6:
-                        value = EqualizerStyleValues.getSlowStyleValue();
+                        value = EqualizerStyleValues.getSirStyleValue();
                         break;
                     case 7:
-                        value = EqualizerStyleValues.getElemusicStyleValue();
+                        value = EqualizerStyleValues.getSlowStyleValue();
                         break;
                     case 8:
-                        value = EqualizerStyleValues.getRockStyleValue();
+                        value = EqualizerStyleValues.getElemusicStyleValue();
                         break;
                     case 9:
+                        value = EqualizerStyleValues.getRockStyleValue();
+                        break;
+                    case 10:
                         value = EqualizerStyleValues.getContriyStyleValue();
                         break;
 
@@ -285,4 +288,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }
