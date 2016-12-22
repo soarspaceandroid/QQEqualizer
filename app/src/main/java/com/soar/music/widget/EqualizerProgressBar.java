@@ -18,12 +18,13 @@ public class EqualizerProgressBar extends View {
     private final static int ANIM_DUR = 500;
 
     private Paint paint = new Paint();
-    private float processValue = 0 ; //  default value
+    private float processValue = 50 ; //  default value
+    private float maxProgress = 100;
 
     //UI
     private int barWidth = 5 ;
-    private int innerCircleRedius = 25; // 内园大小
-    private int outerCircleRedius = 30; //外圆大小
+    private int innerCircleRedius = 15; // 内园大小
+    private int outerCircleRedius = 20; //外圆大小
     private int innerCircleWidth = 10; // 内园 paint 宽度
     private int outerCirclewidth = 15; //外圆 paint 宽度
 
@@ -50,7 +51,7 @@ public class EqualizerProgressBar extends View {
         canvas.drawColor(Color.GRAY);
         paint.setAntiAlias(true);
 
-        float position  = getHeight() -  getHeight() * processValue /100 ;
+        float position  = getHeight() -  getHeight() * processValue /maxProgress ;
         paint.setColor(Color.GREEN);
         paint.setStrokeWidth(barWidth);
         canvas.drawLine((getRight() - getLeft()) / 2 ,getHeight() , (getRight() - getLeft()) / 2 , position , paint);
@@ -119,8 +120,11 @@ public class EqualizerProgressBar extends View {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()){
             case MotionEvent.ACTION_MOVE:
-                float positionY = (getHeight() - event.getY() - getTop())* 100/getHeight() ;
+                float positionY = (getHeight() - event.getY() - getTop())* maxProgress/getHeight() ;
                 processValue = positionY;
+                if(processValue < 0 || processValue > 100){
+                    return true;
+                }
                 invalidate();
                 if(equalizerProgressBarListener != null){
                     equalizerProgressBarListener.onVlaueChanged(processValue);

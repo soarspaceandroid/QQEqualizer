@@ -13,7 +13,8 @@
         android:layout_height="250dp"
         android:orientation="horizontal"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp">
 
         <com.soar.music.widget.EqualizerProgressBar
             android:id="@+id/progressbar1"
@@ -191,7 +192,15 @@
     android:layout_width="match_parent"
     android:layout_height="40dp"
     android:gravity="center"
-    android:clipChildren="false">
+    android:clipChildren="false"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/select"/>
+
 
 
     <android.support.v4.view.ViewPager

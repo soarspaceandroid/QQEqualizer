@@ -1,8 +1,10 @@
 package com.soar.music;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 
 import com.soar.music.adapters.ViewpagerAdapter;
 import com.soar.music.data.EqualizerStyleValues;
+import com.soar.music.utils.RandowColors;
 import com.soar.music.widget.EqualizerProgressBar;
 import com.soar.music.widget.LineView;
 
@@ -103,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar1.setOnEqualizerProgressBarListener(new EqualizerProgressBar.OnEqualizerProgressBarListener() {
             @Override
             public void onVlaueChanged(float value) {
-                datas.put("27" , value);
+                datas.put(EqualizerStyleValues.KEY_27 , value);
                 lineView.setData(datas);
             }
         });
@@ -111,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar2.setOnEqualizerProgressBarListener(new EqualizerProgressBar.OnEqualizerProgressBarListener() {
             @Override
             public void onVlaueChanged(float value) {
-                datas.put("55" , value);
+                datas.put(EqualizerStyleValues.KEY_55 , value);
                 lineView.setData(datas);
             }
         });
@@ -119,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar3.setOnEqualizerProgressBarListener(new EqualizerProgressBar.OnEqualizerProgressBarListener() {
             @Override
             public void onVlaueChanged(float value) {
-                datas.put("109" , value);
+                datas.put(EqualizerStyleValues.KEY_109 , value);
                 lineView.setData(datas);
             }
         });
@@ -127,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar4.setOnEqualizerProgressBarListener(new EqualizerProgressBar.OnEqualizerProgressBarListener() {
             @Override
             public void onVlaueChanged(float value) {
-                datas.put("219" , value);
+                datas.put(EqualizerStyleValues.KEY_219 , value);
                 lineView.setData(datas);
             }
         });
@@ -135,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar5.setOnEqualizerProgressBarListener(new EqualizerProgressBar.OnEqualizerProgressBarListener() {
             @Override
             public void onVlaueChanged(float value) {
-                datas.put("438" , value);
+                datas.put(EqualizerStyleValues.KEY_438 , value);
                 lineView.setData(datas);
             }
         });
@@ -143,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar6.setOnEqualizerProgressBarListener(new EqualizerProgressBar.OnEqualizerProgressBarListener() {
             @Override
             public void onVlaueChanged(float value) {
-                datas.put("875" , value);
+                datas.put(EqualizerStyleValues.KEY_875 , value);
                 lineView.setData(datas);
             }
         });
@@ -151,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar7.setOnEqualizerProgressBarListener(new EqualizerProgressBar.OnEqualizerProgressBarListener() {
             @Override
             public void onVlaueChanged(float value) {
-                datas.put("2k" , value);
+                datas.put(EqualizerStyleValues.KEY_2k , value);
                 lineView.setData(datas);
             }
         });
@@ -159,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar8.setOnEqualizerProgressBarListener(new EqualizerProgressBar.OnEqualizerProgressBarListener() {
             @Override
             public void onVlaueChanged(float value) {
-                datas.put("4k" , value);
+                datas.put(EqualizerStyleValues.KEY_4k , value);
                 lineView.setData(datas);
             }
         });
@@ -167,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar9.setOnEqualizerProgressBarListener(new EqualizerProgressBar.OnEqualizerProgressBarListener() {
             @Override
             public void onVlaueChanged(float value) {
-                datas.put("7k" , value);
+                datas.put(EqualizerStyleValues.KEY_7k , value);
                 lineView.setData(datas);
             }
         });
@@ -175,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar10.setOnEqualizerProgressBarListener(new EqualizerProgressBar.OnEqualizerProgressBarListener() {
             @Override
             public void onVlaueChanged(float value) {
-                datas.put("14k" , value);
+                datas.put(EqualizerStyleValues.KEY_14k , value);
                 lineView.setData(datas);
             }
         });
@@ -191,21 +194,23 @@ public class MainActivity extends AppCompatActivity {
 
     private void initData(){
         datas = new HashMap<>();
-        datas.put("27" , progressBar1.getProcessValue());
-        datas.put("55" , progressBar2.getProcessValue());
-        datas.put("109" , progressBar3.getProcessValue());
-        datas.put("219" , progressBar4.getProcessValue());
-        datas.put("438" , progressBar5.getProcessValue());
-        datas.put("875" , progressBar6.getProcessValue());
-        datas.put("2k" , progressBar7.getProcessValue());
-        datas.put("4k" , progressBar8.getProcessValue());
-        datas.put("7k" , progressBar9.getProcessValue());
-        datas.put("14k" , progressBar10.getProcessValue());
+        datas.put(EqualizerStyleValues.KEY_27 , progressBar1.getProcessValue());
+        datas.put(EqualizerStyleValues.KEY_55 , progressBar2.getProcessValue());
+        datas.put(EqualizerStyleValues.KEY_109 , progressBar3.getProcessValue());
+        datas.put(EqualizerStyleValues.KEY_219 , progressBar4.getProcessValue());
+        datas.put(EqualizerStyleValues.KEY_438 , progressBar5.getProcessValue());
+        datas.put(EqualizerStyleValues.KEY_875 , progressBar6.getProcessValue());
+        datas.put(EqualizerStyleValues.KEY_2k , progressBar7.getProcessValue());
+        datas.put(EqualizerStyleValues.KEY_4k , progressBar8.getProcessValue());
+        datas.put(EqualizerStyleValues.KEY_7k , progressBar9.getProcessValue());
+        datas.put(EqualizerStyleValues.KEY_14k , progressBar10.getProcessValue());
         lineView.setData(datas);
 
         List<TextView> listViews = new ArrayList<>();
         for (int x = 0 ; x < styls.size() ; x ++){
             TextView textView = new TextView(this);
+            textView.setBackgroundColor(Color.parseColor("#"+ RandowColors.getRandColorCode()));
+            textView.setGravity(Gravity.CENTER);
             textView.setText(styls.get(x));
             listViews.add(textView);
         }
@@ -261,16 +266,16 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 // set value
-                progressBar1.setProcessValue(value.get("27"));
-                progressBar2.setProcessValue(value.get("55"));
-                progressBar3.setProcessValue(value.get("109"));
-                progressBar4.setProcessValue(value.get("219"));
-                progressBar5.setProcessValue(value.get("438"));
-                progressBar6.setProcessValue(value.get("875"));
-                progressBar7.setProcessValue(value.get("2k"));
-                progressBar8.setProcessValue(value.get("4k"));
-                progressBar9.setProcessValue(value.get("7k"));
-                progressBar10.setProcessValue(value.get("14k"));
+                progressBar1.setProcessValue(value.get(EqualizerStyleValues.KEY_27));
+                progressBar2.setProcessValue(value.get(EqualizerStyleValues.KEY_55));
+                progressBar3.setProcessValue(value.get(EqualizerStyleValues.KEY_109));
+                progressBar4.setProcessValue(value.get(EqualizerStyleValues.KEY_219));
+                progressBar5.setProcessValue(value.get(EqualizerStyleValues.KEY_438));
+                progressBar6.setProcessValue(value.get(EqualizerStyleValues.KEY_875));
+                progressBar7.setProcessValue(value.get(EqualizerStyleValues.KEY_2k));
+                progressBar8.setProcessValue(value.get(EqualizerStyleValues.KEY_4k));
+                progressBar9.setProcessValue(value.get(EqualizerStyleValues.KEY_7k));
+                progressBar10.setProcessValue(value.get(EqualizerStyleValues.KEY_14k));
 
             }
 
