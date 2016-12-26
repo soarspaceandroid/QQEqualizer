@@ -23,8 +23,8 @@ public class EqualizerProgressBar extends View {
 
     //UI
     private int barWidth = 5 ;
-    private int innerCircleRedius = 15; // 内园大小
-    private int outerCircleRedius = 20; //外圆大小
+    private int innerCircleRedius = 20; // 内园大小
+    private int outerCircleRedius = 25; //外圆大小
     private int innerCircleWidth = 10; // 内园 paint 宽度
     private int outerCirclewidth = 15; //外圆 paint 宽度
 
